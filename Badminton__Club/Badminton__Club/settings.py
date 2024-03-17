@@ -84,7 +84,8 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
+# DATABASE_URL = config('DATABASE_URL')
+DATABASES["default"] = dj_database_url.parse('postgres://badmintonsql_user:BfgDHsNsGUqAoGM4WVxxgh9NS3GUdI62@dpg-cnrk7t20si5c73c02tog-a.oregon-postgres.render.com/badmintonsql')
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
