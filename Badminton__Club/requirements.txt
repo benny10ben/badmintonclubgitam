@@ -29,4 +29,4 @@ sqlparse
 urllib3
 gunicorn
 dj_database_url
-_sqlite3
+sqlite3
