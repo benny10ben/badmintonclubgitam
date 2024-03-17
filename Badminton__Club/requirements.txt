@@ -29,5 +29,5 @@ sqlparse
 urllib3
 gunicorn
 dj_database_url
-pysqlite3
+sqlite3
 
