@@ -1,0 +1,164 @@
+{% extends 'index.html' %}
+
+{% block title %} Badminton Club Gitam Visakhapatnam | Home {% endblock %}
+
+{% block contents %}
+
+<main class="main-home">
+
+  <section class="upcoming-event20">    
+    <!-- <div class="lpb">Let's<br>Play<br>Badminton</div> -->
+    <div class="scrolling-container">
+      <div class="scrolling-text">“One man practicing sportsmanship is far better than 50 preaching it.”</div>
+    </div>
+    <div class="upcoming-events">
+      <p class="about-us1"> UPCOMING <span>EVENTS</span></p>
+      <div class="header-line8"></div>
+      <div class="upcoming">
+        {% for Events in eventslist %}
+        <div class="upcoming-card">
+          <div class="upcoming-img">
+            <img src="{{Events.Image.url}}" alt="">
+            <div class="upcoming-details">
+              <div class="title1">{{Events.Title}}</div>
+              <div class="time1">
+                <svg class="svg-icon1" viewBox="0 0 20 20"><path d="M16.557,4.467h-1.64v-0.82c0-0.225-0.183-0.41-0.409-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H5.901v-0.82c0-0.225-0.185-0.41-0.41-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H3.442c-0.904,0-1.64,0.735-1.64,1.639v9.017c0,0.904,0.736,1.64,1.64,1.64h13.114c0.904,0,1.64-0.735,1.64-1.64V6.106C18.196,5.203,17.461,4.467,16.557,4.467 M17.377,15.123c0,0.453-0.366,0.819-0.82,0.819H3.442c-0.453,0-0.82-0.366-0.82-0.819V8.976h14.754V15.123z M17.377,8.156H2.623V6.106c0-0.453,0.367-0.82,0.82-0.82h1.639v1.23c0,0.225,0.184,0.41,0.41,0.41c0.225,0,0.41-0.185,0.41-0.41v-1.23h8.196v1.23c0,0.225,0.185,0.41,0.41,0.41c0.227,0,0.409-0.185,0.409-0.41v-1.23h1.64c0.454,0,0.82,0.367,0.82,0.82V8.156z"></path></svg>
+                {{Events.StartDate}}</div>
+              <div class="venue1"><svg class="svg-icon1" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+            </svg>
+                {{Events.Location}}</div>
+              
+              <button class="read1" type="button" class="btn btn-primary" data-bs-toggle="modal" 
+              data-bs-target="#modal1-{{ Events.id }}">Read More</button>
+            </div>
+            <a href="{{Events.Google_form}}" class="register">{{Events.Register_Soon}}</a>
+          </div>
+        </div>
+
+        <!-- Button trigger modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="modal1-{{ Events.id }}"  data-bs-backdrop="static" data-bs-keyboard="false"
+            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">{{Events.Title}}</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="event-img-modal"><img src="{{Events.Image.url}}" alt=""></div>
+                        <div class="event-description-modal">{{Events.Description}}</div>
+                    </div>
+                    <div class="modal-footer">
+                      <div class="ti-ve-modal">
+                        <div class="time-date-modal"><svg class="svg-icon1" viewBox="0 0 20 20">
+                                <path
+                                    d="M16.557,4.467h-1.64v-0.82c0-0.225-0.183-0.41-0.409-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H5.901v-0.82c0-0.225-0.185-0.41-0.41-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H3.442c-0.904,0-1.64,0.735-1.64,1.639v9.017c0,0.904,0.736,1.64,1.64,1.64h13.114c0.904,0,1.64-0.735,1.64-1.64V6.106C18.196,5.203,17.461,4.467,16.557,4.467 M17.377,15.123c0,0.453-0.366,0.819-0.82,0.819H3.442c-0.453,0-0.82-0.366-0.82-0.819V8.976h14.754V15.123z M17.377,8.156H2.623V6.106c0-0.453,0.367-0.82,0.82-0.82h1.639v1.23c0,0.225,0.184,0.41,0.41,0.41c0.225,0,0.41-0.185,0.41-0.41v-1.23h8.196v1.23c0,0.225,0.185,0.41,0.41,0.41c0.227,0,0.409-0.185,0.409-0.41v-1.23h1.64c0.454,0,0.82,0.367,0.82,0.82V8.156z">
+                                </path>
+                            </svg>{{Events.StartDate}}</div>
+                        <div class="venue-modal"><svg class="svg-icon1" viewBox="0 0 20 20">
+                                <path
+                                    d="M10,1.375c-3.17,0-5.75,2.548-5.75,5.682c0,6.685,5.259,11.276,5.483,11.469c0.152,0.132,0.382,0.132,0.534,0c0.224-0.193,5.481-4.784,5.483-11.469C15.75,3.923,13.171,1.375,10,1.375 M10,17.653c-1.064-1.024-4.929-5.127-4.929-10.596c0-2.68,2.212-4.861,4.929-4.861s4.929,2.181,4.929,4.861C14.927,12.518,11.063,16.627,10,17.653 M10,3.839c-1.815,0-3.286,1.47-3.286,3.286s1.47,3.286,3.286,3.286s3.286-1.47,3.286-3.286S11.815,3.839,10,3.839 M10,9.589c-1.359,0-2.464-1.105-2.464-2.464S8.641,4.661,10,4.661s2.464,1.105,2.464,2.464S11.359,9.589,10,9.589">
+                                </path>
+                            </svg>{{Events.Location}}</div>
+                    </div>
+                        <a href="Gallery"><button type="button" class="btn btn-primary">PHOTOS</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+
+  <section  class="section-one">
+      <p class="about-us1"> ABOUT <span>US</span></p>
+      <div class="header-line1"></div>
+      <div class="mi-vi">
+        <div class="mission">
+          <div class="mission-heading">Mission</div>
+          <div class="mission-content">We aspire to uplift badminton as a popular sport on campus, empowering players to excel through student-focused events, establishing us as a leading sports club at GITAM University.</div>
+        </div>
+        <div class="mission">
+          <div class="mission-heading">Vision</div>
+          <div class="mission-content">We strive to be the preeminent voice at the nexus of badminton and empower the next generation of leaders to promote badminton as an influential tool among GITAM’s affluent youth.</div>
+        </div>
+      </div>
+      <P class="description">
+        The Badminton Club Vizag, a fully student-run organization overseen by the Directorate of Sports, develops beneficial student programs supported by its diverse mentor expertise and knowledge of badminton. With an outstanding crew we plan entertaining events and establish rules for stakeholders of the Badminton Club & GITAM Sports, leveraging the sports’ importance.
+          <!-- <a href=""><svg xmlns="http://www.w3.org/2000/svg" class="learn-icon icon icon-tabler icon-tabler-arrow-badge-right-filled" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M7 6l-.112 .006a1 1 0 0 0 -.669 1.619l3.501 4.375l-3.5 4.375a1 1 0 0 0 .78 1.625h6a1 1 0 0 0 .78 -.375l4 -5a1 1 0 0 0 0 -1.25l-4 -5a1 1 0 0 0 -.78 -.375h-6z" stroke-width="0" fill="currentColor"></path>
+</svg>Learn more</a> -->
+      </P>
+  </section>
+
+  <section class="section-two">
+
+      <!-- Another slide show | Alternative to bootstrap -->
+      <!-- <div class="scroll-container">
+          <div><img src="../images/img1.jpg" alt="" width="600" height="400" loading="lazy"></div>
+          <div><img src="../images/img2.jpg" alt="" width="600" height="400" loading="lazy"></div>
+          <div><img src="../images/img3.jpg" alt="" width="600" height="400" loading="lazy"></div>
+          <div><img src="../images/img4.jpg" alt="" width="600" height="400" loading="lazy"></div>
+      </div> -->
+
+      <p class="about-us1">CLUB <span>PHOTOS</span></p>
+      <div class="header-line2"></div>
+      
+      <div class="cp">
+        <div class="gallery-wrapper">
+          <div class="gallery-container">
+              <div class="gallery-item">
+                  <img src="/static/images/img3.jpg" alt="Image 3">
+              </div>
+              <div class="gallery-item">
+                  <img src="/static/images/img1.jpg" alt="Image 1">
+              </div>
+              <div class="gallery-item">
+                  <img src="/static/images/img2.jpg" alt="Image 2">
+              </div>
+              <div class="gallery-item">
+                  <img src="/static/images/img3.jpg" alt="Image 3">
+              </div>
+              <!-- Add more duplicate images as needed -->
+          </div>
+  </section>
+
+  <section class="section-three">
+      <p class="about-us1"> FACULTY <span>ADVISORS</span></p>
+      <div class="header-line3"></div>
+      <div class="faculty">
+          <figure class="dos">
+            <img src="/static/images/faculty.jpg" alt="">
+            <div class="fd"></div>
+            <p>Hhhhhhhhhhh<br>Position</p>
+          </figure>
+          <figure class="AM">
+            <img src="/static/images/faculty.jpg" alt="">
+            <div class="fd"></div>
+            <p>HHHHHhhhhhhh<br>Position</p>
+            
+          </figure>
+      </div>
+  </section>
+
+  <section class="section-four">
+      <p class="about-us">COLLABORATION <span>WITH</span></p>
+      <div class="header-line4"></div>
+      <div class="sponsers">
+        {% for home in sponsers %}
+        <div class="sponsored-logo">
+            <a href="{{home.Link}}" target="_blank"><img src="{{home.Image.url}}" alt="Gitam Sports" loading="lazy"></a>
+        </div>
+        {% endfor %}
+      </div>
+  </section>
+</main>
+
+{% endblock %}

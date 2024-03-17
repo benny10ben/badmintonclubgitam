@@ -1,0 +1,138 @@
+{% extends 'index.html' %}
+
+{% block title %} Events | Badminton Club Gitam Visakhapatnam {% endblock %}
+
+{% block contents %}
+<main>
+    <section class="events-section">
+
+        <p class="about-us1">OUR <span>EVENTS</span></p>
+        <div class="header-line5"></div>
+        <div class="our-events">
+            {% for Events in eventslist %}
+                {% if forloop.counter > 3 %}
+                    <div class="card2">
+                        <div class="event-img2"><img src="{{Events.Image.url}}" alt=""></div>
+                        <div class="event-info2">
+                            <div class="title2">{{Events.Title}}</div>
+                            <div class="bd2">{{Events.Description2}}</div>
+                            <!-- <div class="card-description" >{{Events.Description}}</div> -->
+                            <button class="read-more2" type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                                data-bs-target="#modal-{{ Events.id }}">Read More</button>
+                            <div class="ti-ve2">
+                                <div class="time-date2"><svg class="svg-icon2" viewBox="0 0 20 20">
+                                        <path
+                                            d="M16.557,4.467h-1.64v-0.82c0-0.225-0.183-0.41-0.409-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H5.901v-0.82c0-0.225-0.185-0.41-0.41-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H3.442c-0.904,0-1.64,0.735-1.64,1.639v9.017c0,0.904,0.736,1.64,1.64,1.64h13.114c0.904,0,1.64-0.735,1.64-1.64V6.106C18.196,5.203,17.461,4.467,16.557,4.467 M17.377,15.123c0,0.453-0.366,0.819-0.82,0.819H3.442c-0.453,0-0.82-0.366-0.82-0.819V8.976h14.754V15.123z M17.377,8.156H2.623V6.106c0-0.453,0.367-0.82,0.82-0.82h1.639v1.23c0,0.225,0.184,0.41,0.41,0.41c0.225,0,0.41-0.185,0.41-0.41v-1.23h8.196v1.23c0,0.225,0.185,0.41,0.41,0.41c0.227,0,0.409-0.185,0.409-0.41v-1.23h1.64c0.454,0,0.82,0.367,0.82,0.82V8.156z">
+                                        </path>
+                                    </svg>{{Events.StartDate}}</div>
+                                <div class="venue2"><svg class="svg-icon2" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                                    </svg>{{Events.Location}}</div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-{{ Events.id }}"  data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">{{Events.Title}}</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="event-img-modal"><img src="{{Events.Image.url}}" alt=""></div>
+                                    <div class="event-description-modal">{{Events.Description}}</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="ti-ve-modal">
+                                        <div class="time-date-modal"><svg class="svg-icon10" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M16.557,4.467h-1.64v-0.82c0-0.225-0.183-0.41-0.409-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H5.901v-0.82c0-0.225-0.185-0.41-0.41-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H3.442c-0.904,0-1.64,0.735-1.64,1.639v9.017c0,0.904,0.736,1.64,1.64,1.64h13.114c0.904,0,1.64-0.735,1.64-1.64V6.106C18.196,5.203,17.461,4.467,16.557,4.467 M17.377,15.123c0,0.453-0.366,0.819-0.82,0.819H3.442c-0.453,0-0.82-0.366-0.82-0.819V8.976h14.754V15.123z M17.377,8.156H2.623V6.106c0-0.453,0.367-0.82,0.82-0.82h1.639v1.23c0,0.225,0.184,0.41,0.41,0.41c0.225,0,0.41-0.185,0.41-0.41v-1.23h8.196v1.23c0,0.225,0.185,0.41,0.41,0.41c0.227,0,0.409-0.185,0.409-0.41v-1.23h1.64c0.454,0,0.82,0.367,0.82,0.82V8.156z">
+                                                </path>
+                                            </svg>{{Events.StartDate}}</div>
+                                        <div class="venue-modal"><svg class="svg-icon3" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                                        </svg>{{Events.Location}}</div>
+                                    </div>
+                                    <a href="Gallery"><button type="button" class="btn btn-primary">PHOTOS</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="card">
+                        <div class="event-img"><img src="{{Events.Image.url}}" alt=""></div>
+                        <div class="event-transparent"></div>
+                        <div class="event-info">
+                            <div class="title">{{Events.Title}}</div>
+                            <div class="bd">{{Events.Description2}}</div>
+                            <!-- <div class="card-description" >{{Events.Description}}</div> -->
+                            <button class="read-more" type="button" class="btn btn-primary" data-bs-toggle="modal" 
+                                data-bs-target="#modal-{{ Events.id }}">Read More</button>
+                            <div class="ti-ve">
+                                <div class="time-date"><svg class="svg-icon" viewBox="0 0 20 20">
+                                        <path
+                                            d="M16.557,4.467h-1.64v-0.82c0-0.225-0.183-0.41-0.409-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H5.901v-0.82c0-0.225-0.185-0.41-0.41-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H3.442c-0.904,0-1.64,0.735-1.64,1.639v9.017c0,0.904,0.736,1.64,1.64,1.64h13.114c0.904,0,1.64-0.735,1.64-1.64V6.106C18.196,5.203,17.461,4.467,16.557,4.467 M17.377,15.123c0,0.453-0.366,0.819-0.82,0.819H3.442c-0.453,0-0.82-0.366-0.82-0.819V8.976h14.754V15.123z M17.377,8.156H2.623V6.106c0-0.453,0.367-0.82,0.82-0.82h1.639v1.23c0,0.225,0.184,0.41,0.41,0.41c0.225,0,0.41-0.185,0.41-0.41v-1.23h8.196v1.23c0,0.225,0.185,0.41,0.41,0.41c0.227,0,0.409-0.185,0.409-0.41v-1.23h1.64c0.454,0,0.82,0.367,0.82,0.82V8.156z">
+                                        </path>
+                                    </svg>{{Events.StartDate}}</div>
+                                <div class="venue"><svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                    <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                    <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                                    </svg>{{Events.Location}}</div>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                    <!-- Button trigger modal -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="modal-{{ Events.id }}"  data-bs-backdrop="static" data-bs-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog  modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h1 class="modal-title fs-5" id="staticBackdropLabel">{{Events.Title}}</h1>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <div class="event-img-modal"><img src="{{Events.Image.url}}" alt=""></div>
+                                    <div class="event-description-modal">{{Events.Description}}</div>
+                                </div>
+                                <div class="modal-footer">
+                                    <div class="ti-ve-modal">
+                                        <div class="time-date-modal"><svg class="svg-icon10" viewBox="0 0 20 20">
+                                                <path
+                                                    d="M16.557,4.467h-1.64v-0.82c0-0.225-0.183-0.41-0.409-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H5.901v-0.82c0-0.225-0.185-0.41-0.41-0.41c-0.226,0-0.41,0.185-0.41,0.41v0.82H3.442c-0.904,0-1.64,0.735-1.64,1.639v9.017c0,0.904,0.736,1.64,1.64,1.64h13.114c0.904,0,1.64-0.735,1.64-1.64V6.106C18.196,5.203,17.461,4.467,16.557,4.467 M17.377,15.123c0,0.453-0.366,0.819-0.82,0.819H3.442c-0.453,0-0.82-0.366-0.82-0.819V8.976h14.754V15.123z M17.377,8.156H2.623V6.106c0-0.453,0.367-0.82,0.82-0.82h1.639v1.23c0,0.225,0.184,0.41,0.41,0.41c0.225,0,0.41-0.185,0.41-0.41v-1.23h8.196v1.23c0,0.225,0.185,0.41,0.41,0.41c0.227,0,0.409-0.185,0.409-0.41v-1.23h1.64c0.454,0,0.82,0.367,0.82,0.82V8.156z">
+                                                </path>
+                                            </svg>{{Events.StartDate}}</div>
+                                        <div class="venue-modal"><svg class="svg-icon10" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                                            <path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0"></path>
+                                            <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z"></path>
+                                        </svg>{{Events.Location}}</div>
+                                    </div>
+                                    <a href="Gallery"><button type="button" class="btn btn-primary">PHOTOS</button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+
+    </section>
+
+
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,117 @@
+.gallery-section {
+    padding: 7rem 0 2rem 0;
+}
+.gallery-section .about-us1 {
+    padding: 0 2rem;
+}
+.hl {
+    padding: 0 2rem;
+}
+
+.gallery-card {
+    padding: 0 2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 1.2rem;
+    margin-bottom: 2.5rem;
+    overflow: hidden;
+    position: relative;
+    border-radius: 0.5rem;
+}
+.gallery-transparent {
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, #000000c6, rgba(255, 255, 255, 0) 100% );
+    position: absolute;
+    opacity: 0;
+    transition: all 0.6s ease;
+    color: white;
+    display: flex;
+    align-items: start;
+    flex-flow: column nowrap;
+    justify-content: end;
+    padding: 1.5rem 2rem;
+    gap: 0.5rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.img-title, .img-date {
+    margin: 0;
+    font-size: 0.7rem;
+}
+.img-title {
+    font-size: 1rem ;
+    font-weight: 500;
+}
+.imgBox:hover , .imgBox:focus{
+    .gallery-transparent {
+        opacity: 1;
+    }
+}
+.imgBox {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+
+.imgBox img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.5rem;
+}
+
+.gallery {
+    display: flex ;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    align-items: center;
+    gap: 1.2rem;
+    overflow: hidden;
+}
+.all-section {
+    background-color: #ffffff;
+    padding: 1.5rem 2rem 2rem 2rem;
+    margin: 2rem 0;
+}
+
+.all, .event-heading {
+    color: rgb(255, 255, 255);
+    font-size: 1.2rem ;
+    font-weight: 700;
+    padding: 0 2rem;
+}
+.all {
+    color: rgb(0, 0, 0);
+    padding: 0;
+}
+
+.all span {
+    font-size: 0.8rem;
+    color: rgb(133, 133, 133);
+}
+
+@media (min-width:814px) {
+    .imgBox {
+        width: 49%;
+    }
+    .gallery {
+        flex-wrap: nowrap;
+    }
+    .gallery-card {
+        flex-wrap: nowrap;
+    }
+}
+@media (min-width:1024px) {
+    .imgBox {
+        width: 31%;
+    }
+    .gallery-section {
+        padding: 7rem 1rem 2rem 1rem;
+    }
+}

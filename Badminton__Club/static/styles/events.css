@@ -1,0 +1,338 @@
+.events-section {
+    padding: 7rem 2rem 4rem 2rem; 
+}
+
+.our-events {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: start;
+    gap: 1rem;
+}
+
+.event-img {
+    height: 60%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.event-img img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    transition: all 0.3s ease;
+    border: none !important;
+}
+
+.our-events .card {
+    position: relative;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 28rem;
+    margin: 2rem 0 0 0;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    background-color: #30303000;
+    backdrop-filter: blur(30px);
+    color: rgb(0, 0, 0);
+}
+
+.our-events .card:hover , .our-events .card:focus {
+    .event-img img {
+        transform: scale(1.1);
+    }
+}
+
+.event-info {
+    color: white;
+    height: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    padding: 1rem 1.2rem;
+    background-color: rgba(255, 255, 255, 0);
+}
+
+.event-info .title {
+    overflow: hidden;
+    font-size: 1.4em;
+    font-weight: 900;
+}
+
+.event-info .read-more {
+    font-size: 1.05em;
+    font-weight: 900;
+    background-color: rgba(255, 255, 255, 0) ;
+    border: 0;
+    text-align: start;
+    color: #F38A2E;
+    z-index: 3;
+}
+
+.event-info .ti-ve {
+    white-space: nowrap;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    border-top: solid 1px rgba(255, 255, 255, 0.480);
+    padding-top: 0.8rem;
+}
+.time-date, .venue {
+    display: inline;
+}
+.svg-icon, .svg-icon10 {
+    width: 1.1rem;
+    height: auto;
+    margin-right: 0.5rem;
+    stroke: rgb(255, 255, 255);
+}
+.svg-icon10 {
+    stroke: black;
+}
+
+/* MODAL */
+
+.modal-body {
+    text-align: center;
+    align-items: center !important;
+}
+.modal-header {
+    border: none !important;
+    text-align: center !important;
+    align-items: start !important;
+}
+
+.modal-content {
+    height: 90vh;
+    margin: 1rem !important;
+    background-color: rgb(246, 246, 246) !important;
+    height: auto !important;
+}
+
+.event-img-modal {
+    width: 100%;
+    height: 12rem;
+    margin: 0 0 1.5rem 0;
+}
+.event-img-modal img {
+    
+    width: 100%;
+    height: 100%;
+    object-fit: contain !important;
+}
+
+
+.event-description-modal {
+    word-wrap: break-word;
+    text-align: justify;
+}
+
+.ti-ve-modal {
+    font-size: 0.8rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    padding: 0 0 1rem 0;
+    text-align: start;
+}
+/* .time-date-modal {
+    border-right: solid 0.1rem rgba(159, 159, 159, 0.661);
+    width: 100%;
+    padding: 0 1rem 0 0; 
+} */
+.venue-modal {
+    width: 100%;
+}
+
+.modal-footer {
+    align-items: start !important;
+    justify-content: space-between !important;
+    padding-bottom: 0 !important;
+}
+
+/* ............................................... */
+
+
+.event-img2 {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.event-img2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-top-right-radius: 0.5rem;
+    border-top-left-radius: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.our-events .card2:hover , .our-events .card2:focus {
+    .event-img2 img {
+        transform: scale(1.1);
+    }
+}
+
+.our-events .card2 {
+    display: inline-flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    height: 28rem;
+    margin: 2rem 0 0 0;
+    border-radius: 0.5rem !important;
+    overflow: hidden;
+    background-color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
+    position: relative;
+    &:hover , &:focus {
+        .bd2 {
+            height: 4rem;
+            opacity: 0.6;
+        }
+        .event-info2 {
+            height: 19rem;
+        }
+        .event-info2 .read-more2 {
+            height: 1.5rem !important;
+            opacity: 1;
+        }
+        
+    }
+}
+
+.event-info2 {
+    color: rgb(0, 0, 0);
+    width: 100%;
+    height: 9rem;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    padding: 1rem 1.2rem;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    bottom: 0; 
+    transition: height 0.4s ease;
+}
+
+.event-info2 .title2 {
+    overflow: hidden;
+    font-size: 1.4em;
+    font-weight: 900;
+}
+
+.event-info2 .read-more2 {
+    font-size: 1.05em;
+    font-weight: 900;
+    background-color: rgba(255, 255, 255, 0) ;
+    border: 0;
+    text-align: start;
+    color: rgb(0, 0, 0);
+    height: 0;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.event-info2 .ti-ve2 {
+    white-space: nowrap;
+    font-size: 0.7rem;
+    line-height: 1rem;
+    border-top: solid 0.1rem rgba(159, 159, 159, 0.661);
+    border-color: #F38A2E;
+    padding-top: 0.8rem;
+}
+.time-date2, .venue2 {
+    display: inline;
+}
+.svg-icon2, .svg-icon3 {
+    width: 1.1rem;
+    height: auto;
+    margin-right: 0.5rem;
+    stroke: rgb(0, 0, 0);
+}
+.svg-icon3 {
+    stroke: black;
+}
+.bd2 {
+    transition: all 0.2s ease;
+   height: 0;
+   opacity: 0;
+}
+
+
+@media (min-width:640px) {
+
+    .our-events .card2 {
+        width: 20rem;
+        height: 28rem;
+    }
+
+}
+
+@media (min-width:767px) {
+     .our-events .card {
+        display: inline-flex;
+        flex-flow: row nowrap;
+    }
+    .event-img {
+        height: 100%;
+        width: 50%;
+    }
+    .event-transparent {
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+        background-image: linear-gradient(to top, #000000b4, rgba(255, 255, 255, 0) 100% );
+    }
+
+    .event-info {
+        width: 50%;
+        height: 25rem;
+        justify-content: start;
+        gap: 1rem;
+        padding: 1rem 2rem;
+    }
+
+    .event-info .ti-ve {
+        position: absolute;
+        bottom: 1rem; left: 1rem; right: 1rem;
+    }
+    .event-info .title {
+        font-size: 3rem;
+    }
+
+    .bd {
+        font-size: 1.2rem;
+    }
+
+    .event-img img {
+        border-top-right-radius: 0;
+        border-top-left-radius: 0.5rem;
+        border-bottom-left-radius: 0.5rem;
+    }
+}
+
+@media (min-width:900px) {
+    .events-section {
+        padding: 7rem 3rem 4rem 3rem; 
+    }
+}
+
+@media (min-width:1024px) {
+
+    .our-events .card {
+        width: 48%;
+        height: 25rem;
+        margin-bottom: 1rem;
+    }
+    .event-info .title {
+        font-size: 2rem;
+    }
+    .bd {
+        font-size: 1rem;
+    }
+    .our-events .card2 {
+        width: 24%;
+        height: 25rem;
+        margin-bottom: 1rem;
+    }
+}
