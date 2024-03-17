@@ -18,6 +18,8 @@ PyJWT
 python-dateutil
 python-decouple
 python3-openid
+python3.10-openid
+python==3.10
 pytz
 regex
 requests
