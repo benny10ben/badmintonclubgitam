@@ -134,7 +134,7 @@
 
 .gallery-container {
     display: flex;
-    animation: galleryAnimation 20s linear infinite;
+    animation: galleryAnimation 10s linear infinite;
     gap: 2rem;
     margin-top: 3rem;
 }
@@ -475,6 +475,16 @@
     }
 } 
 
+.No-events {
+    color: #ffffff;
+    font-size: 2rem;
+    position: absolute;
+    top: 23rem;
+    right: 10%;
+}
+/* ...  */
+
+
 .btn {
     background: linear-gradient(to left, #ffffff 50%,  #000000 50%) right !important;
     background-size: 300% !important;
@@ -666,5 +676,11 @@
       }
     .scrolling-text {
         animation: scroll 30s linear infinite;
+    }
+}
+
+@media (max-width:1360px) {
+    .No-events {
+        display: none;
     }
 }

@@ -1,12 +1,14 @@
 from django.shortcuts import render
 from .models import Sponsers, EventsList, GalleryImages, GalleryHeadings, TeamMembers, TeamHeadings, AlumniMembers, AlumniHeadings
 import datetime
+from django.utils import timezone
 # Create your views here.
 
 def  home(request):
     sponsers = Sponsers.objects.all()
     eventslist = EventsList.objects.all().order_by('StartDate')
-    context = {'sponsers': sponsers, 'eventslist':eventslist}
+    current_date = timezone.now()
+    context = {'sponsers': sponsers, 'eventslist':eventslist, 'current_date': current_date}
     return render(request,'club/home.html', context)
 
 

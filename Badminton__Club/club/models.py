@@ -17,6 +17,8 @@ class EventsList(models.Model):
   Description2 = models.CharField(max_length=300,blank=True)
   Register_Soon = models.TextField(max_length=30)
   Google_form = models.TextField(max_length=500)
+
+
   def __str__(self):
          return self.Title
 
